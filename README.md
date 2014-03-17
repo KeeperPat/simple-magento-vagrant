@@ -1,9 +1,7 @@
-simple-magento-vagrant
+simple-magento-vagrant-with-ansible
 ======================
 
-A VERY simple Magento environment provisioner for [Vagrant](http://www.vagrantup.com/).
-
-![Magento & Vagrant](https://cookieflow.files.wordpress.com/2013/07/magento_vagrant.jpg?w=525&h=225)
+A simple Magento environment provisioner using [Ansible](http://www.ansible.com/home) and [Vagrant](http://www.vagrantup.com/).
 
 * Creates a running Magento development environment with a few simple commands.
 * Runs on Ubuntu (Precise 12.04 64 Bit) \w PHP 5.3, MySQL 5.5, Apache 2.2
@@ -19,12 +17,13 @@ A VERY simple Magento environment provisioner for [Vagrant](http://www.vagrantup
 
 * Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 * Install [Vagrant](http://www.vagrantup.com/)
-* Clone or [download](https://github.com/cookieflow/simple-magento-vagrant/archive/master.zip) this repository to the root of your project directory `git clone https://github.com/cookieflow/simple-magento-vagrant.git`
+* Install [Ansible](http://docs.ansible.com/intro_installation.html#installation)
+* Clone or [download](https://github.com/KeeperPat/simple-magento-vagrant/archive/master.zip) this repository to the root of your project directory `git clone https://github.com/KeeperPat/simple-magento-vagrant.git`
 * In your project directory, run `vagrant up`
 
 The first time you run this, Vagrant will download the bare Ubuntu box image. This can take a little while as the image is a few-hundred Mb. This is only performed once.
 
-Vagrant will configure the base system before downloading Magento and running the installer.
+Vagrant will use Ansible to configure the base system before downloading Magento and running the installer.
 
 ## Usage
 
@@ -40,9 +39,4 @@ Vagrant will configure the base system before downloading Magento and running th
 * Expose MySQL port for access using Workbench or your preferred MySQL admin tool.
 * Install Modman.
 * Optionally install sample store inventory
-
-**Why no Puppet/Chef?**
-Admittedly, Puppet and Chef are excellent solutions for predictable and documented system configurations. The emphasis for this provisioner is on unoptionated simplicity. There are some excellent Puppet / Chef Magento configurations on Github with far more bells and whistles.
-
-
 
